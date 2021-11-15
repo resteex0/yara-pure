@@ -139,12 +139,7 @@ rule Reflective_DLL_Loader_Aug17_3 {
       $s5 = "\\Start Menu\\Programs\\reflective_dll.dll" ascii
    condition:
       ( uint16(0) == 0x5a4d and
-        filesize < 300KB and
-        (
-            or
-           2 of them
-        )
-      ) or ( 3 of them )
+        filesize < 300KB or 1 of them
 }
 
 rule Reflective_DLL_Loader_Aug17_4 {
