@@ -23,7 +23,7 @@ rule APT_ME_BigBang_Gen_Jul18_1 {
    condition:
       uint16(0) == 0x5a4d and filesize < 3000KB and (
          1 of them or
-         pe.imphash() == "0f09ea2a68d04f331df9a5d0f8641332"
+         
       )
 }
 

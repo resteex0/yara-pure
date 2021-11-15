@@ -104,8 +104,8 @@ rule OilRig_ISMAgent_Campaign_Samples3 {
       $s10 = "!!! can not create output file !!!" fullword ascii
    condition:
       uint16(0) == 0x5a4d and filesize < 400KB and (
-         pe.imphash() == "538805ecd776b9a42e71aebf94fde1b1" or
-         pe.imphash() == "861ac226fbe8c99a2c43ff451e95da97" or
+          or
+          or
          ( 1 of ($x*) or 3 of them )
       )
 }

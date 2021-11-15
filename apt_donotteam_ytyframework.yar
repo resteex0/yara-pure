@@ -36,7 +36,7 @@ rule APT_DonotTeam_YTYframework : APT DonotTeam Windows {
       $s12 = "saveLogs" ascii fullword
    condition:
       uint16be(0) == 0x4d5a and filesize < 500KB and (
-         pe.imphash() == "87775285899fa860b9963b11596a2ded" or
+          or
          1 of ($x*) or 3 of ($a*) or 6 of ($s*)
       )
 }

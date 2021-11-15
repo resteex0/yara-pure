@@ -78,7 +78,7 @@ rule Suckfly_Nidiran_Gen_3 {
       $s3 = "%s\\%08x.exe" fullword ascii
    condition:
       uint16(0) == 0x5a4d and filesize < 300KB and (
-        pe.imphash() == "ae0f4ebf7e8ce91d6548318a3cf82b7a" or
+         or
         1 of ($x*) or
         2 of them
       )

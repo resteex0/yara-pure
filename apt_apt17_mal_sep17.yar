@@ -95,7 +95,7 @@ rule APT17_Malware_Oct17_Gen {
       $s8 = "[IISEND=0x%08X][Recv:] 0x%08X %s" fullword ascii
    condition:
       ( uint16(0) == 0x5a4d and filesize < 200KB and (
-            pe.imphash() == "414bbd566b700ea021cfae3ad8f4d9b9" or
+             or
             1 of ($x*) or
             6 of them
          )

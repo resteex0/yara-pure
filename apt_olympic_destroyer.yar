@@ -49,9 +49,9 @@ rule OlympicDestroyer_Gen2 {
       $s4 = "%s \\\\%s -u \"%s\" -p \"%s\" -accepteula -d %s %s \"%s\"" fullword ascii
    condition:
       uint16(0) == 0x5a4d and filesize < 5000KB and (
-         pe.imphash() == "fd7200dcd5c0d9d4d277a26d951210aa" or
-         pe.imphash() == "975087e9286238a80895b195efb3968d" or
-         pe.imphash() == "da1c2d7acfe54df797bfb1f470257bc3" or
+          or
+          or
+          or
          1 of ($x*) or
          3 of them
       )

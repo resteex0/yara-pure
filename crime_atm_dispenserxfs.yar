@@ -17,6 +17,6 @@ rule ATM_Malware_DispenserXFS {
    condition:
       uint16(0) == 0x5A4D and (
          1 of them or
-         pe.imphash() == "617e037ae26d1931818db0790fb44bfe"
+         
       )
 }

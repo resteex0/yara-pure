@@ -26,7 +26,7 @@ rule APT_TA18_149A_Joanap_Sample1 {
       $s3 = "perfw06.dat" fullword ascii
    condition:
       uint16(0) == 0x5a4d and filesize < 300KB and (
-         pe.imphash() == "f0087d7b90876a2769f2229c6789fcf3" or
+          or
          1 of ($x*) or
          2 of them
       )
@@ -47,7 +47,7 @@ rule APT_TA18_149A_Joanap_Sample2 {
       $s4 = "%SystemRoot%\\system32\\scardprv.dll" fullword ascii
    condition:
       uint16(0) == 0x5a4d and filesize < 600KB and (
-         pe.imphash() == "e8cd12071a8e823ebc434c8ee3e23203" or
+          or
          2 of them
       )
 }
@@ -69,7 +69,7 @@ rule APT_TA18_149A_Joanap_Sample3 {
       $s6 = "%%s\\%%s%%0%dd" fullword ascii
    condition:
       uint16(0) == 0x5a4d and filesize < 200KB and (
-         pe.imphash() == "f6f7b2e00921129d18061822197111cd" or
+          or
          3 of them
       )
 }

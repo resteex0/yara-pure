@@ -16,7 +16,7 @@ rule MAL_PE_Type_BabyShark_Loader {
                2E 44 4C 4C 00 00 00 00 } /* WinExec kernel32.DLL */
    condition:
       uint16(0) == 0x5a4d and (
-         pe.imphash() == "57b6d88707d9cd1c87169076c24f962e" or
+          or
          1 of them or
          for any i in (0 .. pe.number_of_signatures) : (
             pe.signatures[i].issuer contains "thawte SHA256 Code Signing CA" and

@@ -181,7 +181,7 @@ rule Turla_KazuarRAT {
       $s4 = "0`.wtf" fullword ascii
    condition:
       uint16(0) == 0x5a4d and  filesize < 20KB and (
-         pe.imphash() == "682156c4380c216ff8cb766a2f2e8817" or
+          or
          2 of them )
       }
 

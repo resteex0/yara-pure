@@ -30,7 +30,7 @@ rule Silence_malware_1 {
       $s4 = "VNASSRUNXYC" fullword wide
    condition:
       uint16(0) == 0x5a4d and filesize < 200KB and (
-        pe.imphash() == "e03edb9bd7cbe200dc59f361db847f8a" or
+         or
         1 of ($x*) or
         3 of them
       )
@@ -55,7 +55,7 @@ rule Silence_malware_2 {
       $s5 = "Default monitor" fullword ascii
    condition:
       ( uint16(0) == 0x5a4d and filesize < 600KB and (
-            pe.imphash() == "69f3ec173efb6fd3ab5f79e0f8051335" or
+             or
             ( 1 of ($x*) or 3 of them )
          )
       ) or ( 5 of them )

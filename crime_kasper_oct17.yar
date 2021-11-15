@@ -23,7 +23,7 @@ rule KasperMalware_Oct17_1 {
       $x2 = "C:\\D@oc@um@en@ts a@nd Set@tings\\Al@l Users" wide
    condition:
       uint16(0) == 0x5a4d and filesize < 7000KB and (
-         pe.imphash() == "2bceb64cf37acd34bc33b38f2cddfb61" or
+          or
          1 of them
       )
 }

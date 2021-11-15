@@ -23,7 +23,7 @@ rule APT_MAL_REvil_Kaseya_Jul21_1 {
       uint16(0) == 0x5a4d and
       filesize < 3000KB and
       (
-         pe.imphash() == "c36dcd2277c4a707a1a645d0f727542a" or
+          or
          2 of them
       )
 }

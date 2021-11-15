@@ -29,7 +29,7 @@ rule Microcin_Sample_1 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 300KB and (
             4 of them or
-            pe.imphash() == "897077ca318eaf629cfe74569f10e023"
+            
          )
       )
 }

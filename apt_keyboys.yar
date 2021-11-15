@@ -39,7 +39,7 @@ rule KeyBoys_malware_1 {
       $s9 = "%s\\cmd.exe /c \"%s\"" fullword ascii
    condition:
       uint16(0) == 0x5a4d and filesize < 3000KB and (
-         pe.imphash() == "68f7eced34c46808756db4b0c45fb589" or
+          or
          ( pe.exports("Insys") and pe.exports("Inuser") and pe.exports("SSSS") ) or
          1 of ($x*) or
          4 of them

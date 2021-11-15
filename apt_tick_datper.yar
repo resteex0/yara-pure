@@ -35,8 +35,8 @@ rule Datper_Backdoor {
       ( uint16(0) == 0x5a4d and
         filesize < 300KB and
         (
-           pe.imphash() == "58db98e2334746d349d607e4d73bc5ea" or
-           pe.imphash() == "8fbed921458af485ce84fb7d9b13899e" or
+            or
+            or
            ( 2 of ($s*) and 1 of ($c*) ) or
            ( $s3 and $c1 )
          )

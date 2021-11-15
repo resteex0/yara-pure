@@ -154,8 +154,8 @@ rule Greenbug_Malware_Nov17_1 {
       $s3 = "Agent can not be configured" fullword ascii
    condition:
       uint16(0) == 0x5a4d and filesize < 400KB and (
-        pe.imphash() == "58ba44f7ff5436a603fec3df97d815ea" or
-        pe.imphash() == "538805ecd776b9a42e71aebf94fde1b1" or
+         or
+         or
         1 of ($x*) or
         3 of them
       )

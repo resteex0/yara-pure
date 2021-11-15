@@ -30,7 +30,7 @@ rule Rehashed_RAT_1 {
       $s6 = "root\\%s" fullword wide
    condition:
       ( uint16(0) == 0x5a4d and filesize < 800KB and (
-            pe.imphash() == "893212784d01f11aed9ebb42ad2561fc" or
+             or
             pe.exports("ProcessTrans") or
             ( 1 of ($x*) or 4 of them )
          )
@@ -58,7 +58,7 @@ rule Rehashed_RAT_2 {
    condition:
       ( uint16(0) == 0x5a4d and
         filesize < 300KB and (
-           pe.imphash() == "9c4c648f4a758cbbfe28c8850d82f931" or
+            or
            ( 1 of ($x*) or 3 of them )
         )
       ) or ( 4 of them )

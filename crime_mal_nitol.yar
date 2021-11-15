@@ -22,7 +22,7 @@ rule MAL_Nitol_Malware_Jan19_1 {
       $s4 = "User-Agent:Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)" fullword ascii
    condition:
       uint16(0) == 0x5a4d and filesize < 1000KB and (
-         pe.imphash() == "286870a926664a5129b8b68ed0d4a8eb" or
+          or
          1 of ($x*) or
          #n1 > 4 or
          4 of them

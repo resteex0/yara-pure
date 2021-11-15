@@ -25,7 +25,7 @@ rule Elise_Jan18_1 {
       $a1 = "donotbotherme" fullword ascii
    condition:
       uint16(0) == 0x5a4d and filesize < 250KB and (
-        pe.imphash() == "e9478ee4ebf085d1f14f64ba96ef082f" or
+         or
         ( 1 of ($s*) and $a1 )
       )
 }

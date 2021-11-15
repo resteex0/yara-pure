@@ -23,7 +23,7 @@ rule APT_GreyEnergy_Malware_Oct18_1 {
       $s14 = "configure the service" fullword wide
    condition:
       uint16(0) == 0x5a4d and filesize < 700KB and
-      pe.imphash() == "98d1ad672d0db4b4abdcda73cc9835cb" and
+       and
       all of them
 }
 
@@ -72,7 +72,7 @@ rule APT_GreyEnergy_Malware_Oct18_4 {
       $x3 = "NURVNTURVORSMSPPRTQMPTTQOQRP" fullword ascii
    condition:
       uint16(0) == 0x5a4d and filesize < 300KB and (
-         pe.imphash() == "279adfbd42308a07b3131ee57d067b3e" or
+          or
          1 of them
       )
 }

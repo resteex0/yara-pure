@@ -27,7 +27,7 @@ rule Monsoon_APT_Malware_1 {
       ( uint16(0) == 0x5a4d and
         filesize < 300KB and
         (
-           pe.imphash() == "a0c824244f1d36ea1dd2759cf7599cd1" or
+            or
            all of them
         )
       )

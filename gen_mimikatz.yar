@@ -146,7 +146,7 @@ rule Mimikatz_Strings {
          ( 3 of them )
       )
       /* exclude false positives */
-      and not pe.imphash() == "77eaeca738dd89410a432c6bd6459907"
+      and not 
 }
 
 rule AppInitHook {

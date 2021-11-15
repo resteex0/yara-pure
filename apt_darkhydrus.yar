@@ -22,7 +22,7 @@ rule APT_DarkHydrus_Jul18_1 {
       $x1 = "Z:\\devcenter\\aggressor\\" ascii
    condition:
       uint16(0) == 0x5a4d and filesize < 600KB and (
-         pe.imphash() == "d3666d1cde4790b22b44ec35976687fb" or
+          or
          1 of them
       )
 }
@@ -58,7 +58,7 @@ rule APT_DarkHydrus_Jul18_3 {
       $s3 = "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.0; Trident/5.0)" fullword ascii
    condition:
       uint16(0) == 0x5a4d and filesize < 100KB and (
-         pe.imphash() == "478eacfbe2b201dabe63be53f34148a5" or
+          or
          all of them
       )
 }
@@ -100,7 +100,7 @@ rule HKTL_Unlicensed_CobaltStrike_EICAR_Jul18_5 {
       $s2 = "libgcj-12.dll" fullword ascii /* Goodware String - occured 3 times */
    condition:
       uint16(0) == 0x5a4d and filesize < 900KB and (
-         pe.imphash() == "829da329ce140d873b4a8bde2cbfaa7e" or
+          or
          all of ($s*) or
          $x1
       )

@@ -24,7 +24,7 @@ rule MAL_Hogfish_Report_Related_Sample {
       $s1 = "R=user32.dll" fullword ascii
    condition:
       uint16(0) == 0x5a4d and filesize < 1000KB and (
-         pe.imphash() == "efad9ff8c0d2a6419bf1dd970bcd806d" or
+          or
          1 of them
       )
 }
@@ -40,7 +40,7 @@ rule MAL_RedLeaves_Apr18_1 {
       hash3 = "d956e2ff1b22ccee2c5d9819128103d4c31ecefde3ce463a6dea19ecaaf418a1"
    condition:
       uint16(0) == 0x5a4d and filesize < 1000KB and (
-         pe.imphash() == "7a861cd9c495e1d950a43cb708a22985" or
-         pe.imphash() == "566a7a4ef613a797389b570f8b4f79df"
+          or
+         
       )
 }

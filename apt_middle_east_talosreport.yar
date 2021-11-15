@@ -20,7 +20,7 @@ rule ME_Campaign_Malware_1 {
       hash1 = "1176642841762b3bc1f401a5987dc55ae4b007367e98740188468642ffbd474e"
    condition:
       uint16(0) == 0x5a4d and filesize < 5000KB and (
-        pe.imphash() == "618f76eaf4bd95c690d43e84d617efe9"
+        
       )
 }
 
@@ -40,7 +40,7 @@ rule ME_Campaign_Malware_2 {
       $s5 = "Cimzal" fullword ascii
    condition:
       uint16(0) == 0x5a4d and filesize < 600KB and (
-        pe.imphash() == "b06055e6cc2a804111ab6964df1ca4ae" or
+         or
         4 of them
       )
 }
@@ -92,6 +92,6 @@ rule ME_Campaign_Malware_5 {
       $s6 = "time.nist.gov" fullword wide
    condition:
       uint16(0) == 0x5a4d and filesize < 60KB and (
-        pe.imphash() == "f34d5f2d4577ed6d9ceec516c1f5a744" and ( 8 of them )
+         and ( 8 of them )
       ) or ( all of them )
 }

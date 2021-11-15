@@ -152,11 +152,11 @@ rule APT_Thrip_Sample_Jun18_9 {
       hash4 = "0c49d1632eb407b5fd0ce32ed45b1c783ac2ef60d001853ae1f6b7574e08cfa9"
    condition:
       uint16(0) == 0x5a4d and filesize < 100KB and (
-         pe.imphash() == "a7f0714e82b3105031fa7bc89dfe7664" or
-         pe.imphash() == "8812ff21aeb160e8800257140acae54b" or
-         pe.imphash() == "44a1e904763fe2d0837c747c7061b010" or
-         pe.imphash() == "51a854d285aa12eb82e76e6e1be01573" or
-         pe.imphash() == "a1f457c8c549c5c430556bfe5887a4e6"
+          or
+          or
+          or
+          or
+         
       )
 }
 
@@ -195,7 +195,7 @@ rule APT_Thrip_Sample_Jun18_11 {
       $s6 = "WQZXQFPVOW" fullword ascii
    condition:
       uint16(0) == 0x5a4d and filesize < 100KB
-      and ( pe.imphash() == "6eef4394490378f32d134ab3bf4bf194" or all of them )
+      and (  or all of them )
 }
 
 rule APT_Thrip_Sample_Jun18_12 {
@@ -237,7 +237,7 @@ rule APT_Thrip_Sample_Jun18_13 {
       $s5 = "ipecho.net" fullword ascii
    condition:
       uint16(0) == 0x5a4d and filesize < 500KB
-      and ( pe.imphash() == "3dfad33b2fb66c083c99dc10341908b7" or 4 of them )
+      and (  or 4 of them )
 }
 
 rule APT_Thrip_Sample_Jun18_14 {
@@ -280,7 +280,7 @@ rule APT_Thrip_Sample_Jun18_15 {
       $s8 = "%s\\%s\\%s%s" fullword ascii
    condition:
       uint16(0) == 0x5a4d and filesize < 200KB
-      and ( pe.imphash() == "f6ec70a295000ab0a753aa708e9439b4" or 6 of them )
+      and (  or 6 of them )
 }
 
 rule APT_Thrip_Sample_Jun18_16 {

@@ -124,7 +124,7 @@ rule ZXshell_20171211_chrsben {
       $s4 = "$Hangzhou Shunwang Technology Co.,Ltd0" fullword ascii
    condition:
       uint16(0) == 0x5a4d and filesize < 2000KB and (
-        pe.imphash() == "de481441d675e9aca4f20bd8e16a5faa" or
+         or
         pe.exports("PerfectWorld") or
         pe.exports("ncProxyXll") or
         1 of ($x*) or

@@ -12,7 +12,7 @@ rule MAL_CrypRAT_Jan19_1 {
       $x1 = "Cryp_RAT" fullword wide
    condition:
       uint16(0) == 0x5a4d and filesize < 600KB and (
-         pe.imphash() == "2524e5e9fe04d7bfe5efb3a5e400fe4b" or
+          or
          1 of them
       )
 }

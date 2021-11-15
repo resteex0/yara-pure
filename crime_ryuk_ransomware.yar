@@ -16,8 +16,8 @@ rule MAL_Ryuk_Ransomware {
       $x5 = "RyukReadMe.txt" fullword wide
    condition:
       uint16(0) == 0x5a4d and filesize < 400KB and (
-         pe.imphash() == "4a069c1abe5aca148d5a8fdabc26751e" or
-         pe.imphash() == "dc5733c013378fa418d13773f5bfe6f1" or
+          or
+          or
          1 of them
       )
 }

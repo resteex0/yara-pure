@@ -25,7 +25,7 @@ rule APT_Lazarus_Dropper_Jun18_1 {
       $s3 = "update" fullword wide /* Goodware String - occured 254 times */
    condition:
       uint16(0) == 0x5a4d and filesize < 21000KB and (
-        pe.imphash() == "fcac768eff9896d667a7c706d70712ce" or
+         or
         all of them
       )
 }

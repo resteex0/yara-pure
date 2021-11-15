@@ -31,7 +31,7 @@ rule FreeMilk_APT_Mal_1 {
       $s4 = "\"%s\" help" fullword wide
    condition:
       uint16(0) == 0x5a4d and filesize < 300KB and (
-            pe.imphash() == "108aa007b3d1b4817ff4c04d9b254b39" or
+             or
             1 of ($x*) or
             4 of them
          )
@@ -52,7 +52,7 @@ rule FreeMilk_APT_Mal_2 {
       $s4 = "win-%d.%d.%d-%d" fullword wide
    condition:
       uint16(0) == 0x5a4d and filesize < 400KB and (
-         pe.imphash() == "b86f7d2c1c182ec4c074ae1e16b7a3f5" or
+          or
          all of them
       )
 }

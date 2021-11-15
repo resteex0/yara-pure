@@ -95,7 +95,7 @@ rule APT_APT41_POISONPLUG {
       $s4 = "Remote Desktop Services" fullword wide
    condition:
       uint16(0) == 0x5a4d and filesize < 10000KB and (
-         pe.imphash() == "1b074ef7a1c0888ef31337c8ad2f2e0a" or
+          or
          2 of them
       )
 }
@@ -143,7 +143,7 @@ rule APT_APT41_HIGHNOON_2 {
       $s3 = "\\svchost.exe" fullword ascii
    condition:
       uint16(0) == 0x5a4d and filesize < 600KB and (
-         pe.imphash() == "b70358b00dd0138566ac940d0da26a03" or
+          or
          pe.exports("DllMain_mem") or
          $x1 or 3 of them
       )
@@ -166,7 +166,7 @@ rule APT_APT41_HIGHNOON_BIN {
       $s5 = "%s%s\\Enum" fullword ascii
    condition:
       uint16(0) == 0x5a4d and filesize < 600KB and (
-         pe.imphash() == "b70358b00dd0138566ac940d0da26a03" or
+          or
          3 of them
       )
 }

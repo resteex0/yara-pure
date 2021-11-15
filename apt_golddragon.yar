@@ -20,10 +20,10 @@ rule GoldDragon_malware_Feb18_1 {
       score = 90
    condition:
       uint16(0) == 0x5a4d and filesize < 300KB and (
-         pe.imphash() == "168c2f7752511dfd263a83d5d08a90db" or
-         pe.imphash() == "0606858bdeb129de33a2b095d7806e74" or
-         pe.imphash() == "51d992f5b9e01533eb1356323ed1cb0f" or
-         pe.imphash() == "bb801224abd8562f9ee8fb261b75e32a"
+          or
+          or
+          or
+         
       )
 }
 
@@ -115,7 +115,7 @@ rule GoldDragon_RunningRAT {
       $s5 = "D:\\result.log" fullword ascii
    condition:
       uint16(0) == 0x5a4d and filesize < 300KB and (
-        pe.imphash() == "c78ccc8f02286648c4373d3bf03efc43" or
+         or
         pe.exports("RunningRat") or
         1 of ($x*) or
         5 of ($a*) or

@@ -29,7 +29,7 @@ rule MAL_Emotet_Jan20_1 {
       $op2 = { 8b 7d fc 0f 85 49 ff ff ff 85 db 0f 84 d1 }
    condition:
       uint16(0) == 0x5a4d and filesize <= 200KB and (
-         pe.imphash() == "009889c73bd2e55113bf6dfa5f395e0d" or
+          or
          1 of them
       )
 }

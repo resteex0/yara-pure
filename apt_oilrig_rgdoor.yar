@@ -31,7 +31,7 @@ rule OilRig_RGDoor_Gen1 {
       $s4 = ".?AVCHelloWorld@@" fullword ascii
    condition:
       uint16(0) == 0x5a4d and filesize < 600KB and (
-        pe.imphash() == "47cb127aad6c7c9954058e61a2a6429a" or
+         or
         1 of ($c*) or
         2 of them
       )

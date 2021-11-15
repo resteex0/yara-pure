@@ -19,7 +19,7 @@ rule MAL_ExileRAT_Feb19_1 {
       $s5 = "ver:%d.%d.%d" fullword ascii
    condition:
       uint16(0) == 0x5a4d and filesize < 500KB and (
-         pe.imphash() == "da8475fc7c3c90c0604ce6a0b56b5f21" or
+          or
          3 of them
       )
 }

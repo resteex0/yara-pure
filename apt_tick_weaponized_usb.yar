@@ -31,7 +31,7 @@ rule APT_Tick_Sysmon_Loader_Jun18 {
       $s8 = "\\Accessories" fullword ascii
    condition:
       uint16(0) == 0x5a4d and filesize < 200KB and (
-         pe.imphash() == "c5bb16e79fb500c430edce9481ae5b2b" or
+          or
          $x1 or 6 of them
       )
 }

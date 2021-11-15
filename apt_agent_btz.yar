@@ -95,7 +95,7 @@ rule APT_Turla_Agent_BTZ_Gen_1 {
       $s13 = "%02d.%02d.%04d Log begin:" fullword ascii
    condition:
       uint16(0) == 0x5a4d and filesize < 500KB and (
-         pe.imphash() == "9d0d6daa47d6e6f2d80eb05405944f87" or
+          or
          ( pe.exports("Entry") and pe.exports("InstallM") and pe.exports("InstallS") ) or
          $x1 or 3 of them
       ) or ( 5 of them )

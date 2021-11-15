@@ -23,7 +23,7 @@ rule CMStar_Malware_Sep17 {
       $s2 = "StateNum:%d,FileSize:%d" fullword ascii
    condition:
       uint16(0) == 0x5a4d and filesize < 100KB and (
-         pe.imphash() == "22021985de78a48ea8fb82a2ff9eb693" or
+          or
          pe.exports("WinCred") or
          all of them
       )

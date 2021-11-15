@@ -64,5 +64,5 @@ rule MAL_Ransom_Ragnarlocker_July_2020_1 {
       $s3 = "Opera Software" fullword wide  /* Don't touch browsers for contact him*/
       $s4 = "Tor browser" fullword wide /*Ref ransom note*/
    condition:
-      uint16(0) == 0x5a4d and filesize < 30KB and ( pe.imphash() == "2c2aab89a4cba444cf2729e2ed61ed4f" and ( (2 of ($f*)) and (3 of ($r*)) and (4 of ($a*)) and (2 of ($c*)) and (2 of ($s*)) ) )
+      uint16(0) == 0x5a4d and filesize < 30KB and (  and ( (2 of ($f*)) and (3 of ($r*)) and (4 of ($a*)) and (2 of ($c*)) and (2 of ($s*)) ) )
 }

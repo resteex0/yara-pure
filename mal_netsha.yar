@@ -30,6 +30,6 @@ rule MAL_Neshta_Generic {
          1 of ($x*) or 
          all of ($s*) or 
          3 of them or 
-         pe.imphash() == "9f4693fc0c511135129493f2161d1e86"
+         
       )
 }

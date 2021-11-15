@@ -44,7 +44,7 @@ rule Reaver3_Malware_Nov17_2 {
       $s5 = "gekmomkege" fullword ascii
    condition:
       uint16(0) == 0x5a4d and filesize < 100KB and (
-         pe.imphash() == "837cc5062a0758335b257ea3b27972b2" or
+          or
          1 of ($x*) or
          3 of them
       )
@@ -70,7 +70,7 @@ rule Reaver3_Malware_Nov17_3 {
       $s5 = "\\services\\" fullword ascii
    condition:
       uint16(0) == 0x5a4d and filesize < 200KB and (
-         pe.imphash() == "8ee521b2316ddd6af1679eac9f5ed77b" or
+          or
          4 of them
       )
 }

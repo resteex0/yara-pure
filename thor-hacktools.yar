@@ -3990,7 +3990,7 @@ rule ProcessInjector_Gen {
       $s17 = "[-] An app path is required when not injecting!" fullword ascii
    condition:
       uint16(0) == 0x5a4d and filesize < 50KB and (
-         pe.imphash() == "d27e0fa013d7ae41be12aaf221e41f9b" or
+          or
          1 of them
       ) or 3 of them
 }

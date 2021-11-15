@@ -55,7 +55,7 @@ rule ROKRAT_Dropper_Nov17 {
       hash2 = "a29b07a6fe5d7ce3147dd7ef1d7d18df16e347f37282c43139d53cce25ae7037"
    condition:
       uint16(0) == 0x5a4d and filesize < 2500KB and
-      pe.imphash() == "c6187b1b5f4433318748457719dd6f39"
+      
 }
 
 rule Freeenki_Infostealer_Nov17 {

@@ -68,7 +68,7 @@ rule Slingshot_APT_Malware_1 {
       $s3 = "smsvcrt -h 0x%p" fullword wide
    condition:
       uint16(0) == 0x5a4d and filesize < 700KB and (
-        pe.imphash() == "7ead4bb0d752003ce7c062adb7ffc51a" or
+         or
         pe.exports("WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW0000") or
         1 of them
       )
@@ -109,7 +109,7 @@ rule Slingshot_APT_Malware_3 {
       $s4 = "%hc%hc==" fullword ascii
    condition:
       uint16(0) == 0x5a4d and filesize < 100KB and (
-        pe.imphash() == "2f3b3df466e24e0792e0e90d668856bc" or
+         or
         pe.exports("dll_u") or
         ( $a1 and 2 of ($s*) )
       )

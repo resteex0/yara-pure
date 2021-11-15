@@ -67,7 +67,7 @@ rule HiddenCobra_FallChill_1 {
       $e5 = "OkvmPilxvhhTlpvm" fullword ascii
    condition:
       uint16(0) == 0x5a4d and filesize < 300KB and (
-        pe.imphash() == "6135d9bc3591ae7bc72d070eadd31755" or
+         or
         3 of ($s*) or
         4 of them
       )
@@ -87,7 +87,7 @@ rule HiddenCobra_FallChill_2 {
       $s3 = "c%sd.e%sc %s > \"%s\" 2>&1" fullword wide
    condition:
       uint16(0) == 0x5a4d and filesize < 500KB and (
-         pe.imphash() == "cb36dcb9909e29a38c387b8a87e7e4ed" or
+          or
          ( 2 of them )
       )
 }

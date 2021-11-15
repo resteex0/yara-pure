@@ -38,7 +38,7 @@ rule Sofacy_Oct17_1 {
       $s7 = "if NOT exist %path % (exit)" fullword ascii
    condition:
       uint16(0) == 0x5a4d and filesize < 300KB and (
-         pe.imphash() == "a2d1be6502b4b3c28959a4fb0196ea45" or
+          or
          pe.exports("KlpSvc") or
          ( 1 of ($x*) or 4 of them ) or
          ( $s1 and all of ($g*) )
@@ -62,7 +62,7 @@ rule Sofacy_Oct17_2 {
       $s4 = "%j%Xjsf" fullword ascii
    condition:
       ( uint16(0) == 0x5a4d and filesize < 90KB and (
-            pe.imphash() == "13344e2a717849489bcd93692f9646f7" or
+             or
             ( 4 of them )
          )
       ) or ( all of them )

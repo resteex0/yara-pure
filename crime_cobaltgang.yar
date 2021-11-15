@@ -84,8 +84,8 @@ rule MAL_CRIME_CobaltGang_Malware_Oct19_1 {
       $op_b2 = { 89 e5 53 8b 55 08 8b 45 0c 8a 1c 0a 88 1c 08 83 }
    condition:
       uint16(0) == 0x5a4d and filesize <= 2000KB and (
-         pe.imphash() == "d1e3f8d02cce09520379e5c1e72f862f" or
-         pe.imphash() == "8e26df99c70f79cb8b1ea2ef6f8e52ac" or
+          or
+          or
          ( $op_a1 and 1 of ($op_b*) )
       )
 }

@@ -61,8 +61,8 @@ rule OpHoneybee_Malware_1 {
       $s9 = "TO EVERYONE" fullword ascii
    condition:
       uint16(0) == 0x5a4d and filesize < 200KB and (
-        pe.imphash() == "e14b59a79999cc0bc589a4cb5994692a" or
-        pe.imphash() == "64400f452e2f60305c341e08f217b02c" or
+         or
+         or
         1 of ($x*) or
         3 of them
       )

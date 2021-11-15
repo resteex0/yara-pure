@@ -23,7 +23,7 @@ rule TurlaMosquito_Mal_1 {
       $s2 = "EStOpnabn" fullword ascii
    condition:
       uint16(0) == 0x5a4d and filesize < 2000KB and (
-        pe.imphash() == "169d4237c79549303cca870592278f42" or
+         or
         all of them
       )
 }
@@ -44,7 +44,7 @@ rule TurlaMosquito_Mal_2 {
       $s7 = "QWVPQQ" fullword ascii
    condition:
       uint16(0) == 0x5a4d and filesize < 600KB and (
-        pe.imphash() == "cd918073f209c5da7a16b6c125d73746" or
+         or
         all of them
       )
 }
@@ -66,7 +66,7 @@ rule TurlaMosquito_Mal_3 {
       $s4 = "Microsoft Update" fullword wide
    condition:
       uint16(0) == 0x5a4d and filesize < 400KB and (
-         pe.imphash() == "88488fe0b8bcd6e379dea6433bb5d7d8" or
+          or
          ( pe.exports("InstallRoutineW") and pe.exports("StartRoutine") ) or
          $x1 or
          3 of them
@@ -134,7 +134,7 @@ rule TurlaMosquito_Mal_7 {
       $s19 = "CCommandSender::operator(" fullword wide
    condition:
       uint16(0) == 0x5a4d and filesize < 1000KB and (
-        pe.imphash() == "073235ae6dfbb1bf5db68a039a7b7726" or
+         or
         3 of them
       )
 }

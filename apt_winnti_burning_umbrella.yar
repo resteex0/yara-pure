@@ -23,7 +23,7 @@ rule MAL_BurningUmbrella_Sample_1 {
       $s2 = { 40 00 00 E0 64 6A 7A 66 63 6D 77 62 }
    condition:
       uint16(0) == 0x5a4d and filesize < 4000KB and (
-         pe.imphash() == "baa93d47220682c04d92f7797d9224ce" and
+          and
          $s1 in (0..1024) and
          $s2 in (0..1024)
       )
@@ -289,8 +289,8 @@ rule MAL_BurningUmbrella_Sample_18 {
       $s1 = "c:\\tmp\\tran.exe" fullword ascii
    condition:
       uint16(0) == 0x5a4d and filesize < 200KB and (
-         pe.imphash() == "11675b4db0e7df7b29b1c1ef6f88e2e1" or
-         pe.imphash() == "364e1f68e2d412db34715709c68ba467" or
+          or
+          or
          pe.exports("deKernel") or
          1 of them
       )
@@ -330,7 +330,7 @@ rule MAL_BurningUmbrella_Sample_20 {
       $s3 = "expanding computer" fullword ascii
    condition:
       uint16(0) == 0x5a4d and filesize < 500KB and (
-         pe.imphash() == "bac338bfe2685483c201e15eae4352d5" or
+          or
          2 of them
       )
 }

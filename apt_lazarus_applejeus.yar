@@ -52,7 +52,7 @@ rule APT_Lazarus_Aug18_1 {
       $s5 = "ping 127.0.0.1 -n 3" fullword wide
    condition:
       uint16(0) == 0x5a4d and filesize < 500KB and (
-         pe.imphash() == "3af996e4f960108533e69b9033503f40" or
+          or
          4 of them
       )
 }

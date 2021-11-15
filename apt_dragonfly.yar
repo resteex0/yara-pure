@@ -21,7 +21,7 @@ rule Unspecified_Malware_Sep1_A1 {
    condition:
       ( uint16(0) == 0x5a4d and
         filesize < 200KB and
-        pe.imphash() == "17a4bd9c95f2898add97f309fc6f9bcd"
+        
       )
 }
 
@@ -78,7 +78,7 @@ rule DragonFly_APT_Sep17_3 {
    condition:
       ( uint16(0) == 0x5a4d and
         filesize < 40KB and (
-           pe.imphash() == "6f03fb864ff388bac8680ac5303584be" or
+            or
            all of them
         )
       )

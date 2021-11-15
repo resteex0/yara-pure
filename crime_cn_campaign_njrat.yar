@@ -92,7 +92,7 @@ rule CN_disclosed_20180208_Mal1 {
       $s2 = "ServUDaemon.exe" fullword ascii
    condition:
       uint16(0) == 0x5a4d and filesize < 2000KB and (
-        pe.imphash() == "28e3a58132364197d7cb29ee104004bf" or
+         or
         1 of ($x*) or
         3 of them
       )

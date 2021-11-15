@@ -128,7 +128,7 @@ rule HvS_APT37_mimikatz_loader_DF012 {
       $s2 = "afrfa"
    condition:
       uint16(0) == 0x5a4d and filesize < 200KB and 
-      (pe.imphash() == "fa0b87c7e07d21001355caf7b5027219") and (all of them)
+      () and (all of them)
 }
 */
 

@@ -19,7 +19,7 @@ rule Sofacy_Campaign_Mal_Feb18_cdnver {
       $s2 = "SNFIRNW" fullword ascii
    condition:
       uint16(0) == 0x5a4d and filesize < 90KB and (
-        pe.imphash() == "01f3d0fe6fb9d9df24620e67afc143c7" or
+         or
         1 of ($x*) or
         2 of them
       )
@@ -41,7 +41,7 @@ rule Sofacy_Trojan_Loader_Feb18_1 {
       $s2 = "nad.dll\"" fullword ascii
    condition:
       uint16(0) == 0x5a4d and filesize < 300KB and (
-        pe.imphash() == "a2d1be6502b4b3c28959a4fb0196ea45" or
+         or
         pe.exports("VidBitRpl") or
         1 of ($x*) or
         2 of them
@@ -68,7 +68,7 @@ rule APT_ATP28_Sofacy_Indicators_May19_1 {
       $op2 = { e8 af bb ef ff b8 ff ff ff ff e9 f4 01 00 00 8b }
    condition:
       uint16(0) == 0x5a4d and filesize < 10000KB and (
-         pe.imphash() == "f4e1c3aaec90d5dfa23c04da75ac9501" or
+          or
          1 of ($x*) or
          ( $s1 and 2 of ($op*) )
       )

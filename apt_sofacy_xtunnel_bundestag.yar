@@ -41,7 +41,7 @@ rule Winexe_RemoteExec {
    condition:
    uint16(0) == 0x5a4d and filesize < 115KB and (
       3 of them or
-      pe.imphash() == "2f8a475933ac82b8e09eaf26b396b54d"
+      
    )
 }
 

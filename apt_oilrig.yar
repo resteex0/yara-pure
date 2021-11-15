@@ -191,7 +191,7 @@ rule OilRig_Malware_Nov17_13 {
       $a2 = "cmd.exe /c " fullword ascii
    condition:
       uint16(0) == 0x5a4d and filesize < 3000KB and (
-        pe.imphash() == "0160250adfc97f9d4a12dd067323ec61" or
+         or
         1 of ($x*) or
         all of ($a*)
       )

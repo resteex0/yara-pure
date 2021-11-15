@@ -66,7 +66,7 @@ rule Reflective_DLL_Loader_Aug17_1 {
       ( uint16(0) == 0x5a4d and
         filesize < 300KB and
         (
-           pe.imphash() == "4bf489ae7d1e6575f5bb81ae4d10862f" or
+            or
            pe.exports("?ReflectiveLoader@@YA_KPEAX@Z") or
            ( 1 of ($x*) or 2 of them )
         )
@@ -116,7 +116,7 @@ rule Reflective_DLL_Loader_Aug17_2 {
       ( uint16(0) == 0x5a4d and
         filesize < 200KB and
         (
-           pe.imphash() == "59867122bcc8c959ad307ac2dd08af79" or
+            or
            pe.exports("_ReflectiveLoader@4") or
            2 of them
         )
@@ -141,7 +141,7 @@ rule Reflective_DLL_Loader_Aug17_3 {
       ( uint16(0) == 0x5a4d and
         filesize < 300KB and
         (
-           pe.imphash() == "26ba48d3e3b964f75ff148b6679b42ec" or
+            or
            2 of them
         )
       ) or ( 3 of them )

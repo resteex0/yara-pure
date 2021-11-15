@@ -29,7 +29,7 @@ rule TopHat_Malware_Jan18_1 {
       $s7 = "DIALOG INCLUDE" fullword ascii
    condition:
       uint16(0) == 0x5a4d and filesize < 400KB and (
-        pe.imphash() == "c221006b240b1c993217bd61e5ee31b6" or
+         or
         6 of them
       )
 }
@@ -51,7 +51,7 @@ rule TopHat_Malware_Jan18_2 {
       $s6 = "TEXPORTAPIS" fullword ascii
    condition:
       uint16(0) == 0x5a4d and filesize < 1000KB and (
-        pe.imphash() == "f98cebcae832abc3c46e6e296aecfc03" and
+         and
         5 of them
       )
 }

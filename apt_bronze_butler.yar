@@ -69,7 +69,7 @@ rule BronzeButler_Daserf_C_1 {
       $b10 = "dkgwey.php" fullword ascii
    condition:
       uint16(0) == 0x5a4d and filesize < 300KB and (
-         pe.imphash() == "088382f4887e3b2c4bd5157f2d72b618" or
+          or
          all of ($a*) or
          4 of them
       )
